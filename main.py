@@ -1,24 +1,17 @@
-print("Pascgolf")
-i=input("Input your code:\n");p=0
-o=0;e=0;v={"n":[],"v":[]};ts=[]
-try:
-   while len(i)>p:
-      if e==1:break
-      elif i[p]=="[":o=1
-      elif i[p]=="]":o=0
-      elif i[p+1]==":"and i[p]=="v":
-         v["n"].append(i[p+2]);p+=3
-         while i[p]!=";":ts.append(i[p]);p+=1
-         ts.reverse()
-         while len(ts)>1:ts.append(ts.pop()+ts.pop())
-         v["v"].append(ts.pop())
-      elif i[p]==".":
-         if i[p+1]=="\"":
-            p+=2
-            while i[p]!="\"":print(i[p],end="");p+=1
-         if i[p+1]=="v"and i[p+2]==":":
-            p+=3;ind=v["n"].index(i[p]);print(v["v"][ind])
-      elif i[p]!="["or"]"and o==0:e=1;print("command not in brackets")
-      else:e=1;print("not a valid pascgolf command",i[p])
-      p+=1
-except IndexError:...
+# Compass implementation Y25 @Gaham (Thevitebsk)
+# A language based on Pascal
+class Compass:
+ def phar(x:str):
+  x=x.strip().split("\n")
+  p=po=0
+  texts=[];funcs={}
+  while len(x)>p:
+   while len(x[p])>po:
+    if x[p][po:po+6]=="begin ":
+     po+=6
+     while x[p][po]!=":":texts.append(x[p][po]);po+=1
+     x.insert(p+1,x[p][po+1::]);x[p]=x[p][6:po];funcs[x[p-1]]=x.pop(p+1)
+    po+=1
+   p+=1
+  print(x)
+Compass.phar("""begin main:print("Hello, world!")""")
