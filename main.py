@@ -14,6 +14,7 @@ class Compass:
      if not x[p+1]:print(f"ERROR:Function {x[p]} has no body");exit()
      else:funcs[x[p-1]]=x.pop(p+1)
     po+=1
+   po=0
    p+=1
    if"main"not in x:print(f"\"{oldx[0]}\"\nERROR:Function main requiers to be initiated");exit()
   print(x,funcs)
