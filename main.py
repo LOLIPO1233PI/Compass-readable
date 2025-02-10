@@ -4,8 +4,7 @@ class Compass:
  def phar(x:str):
   oldx=x.strip().split("\n")
   x=x.strip().split("\n")
-  p=po=0
-  texts=[];funcs={}
+  p=po=0;texts=[];funcs={}
   while len(x)>p:
    while len(x[p])>po:
     if x[p].startswith("begin "):
