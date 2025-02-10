@@ -1,4 +1,4 @@
-# Compass implementation Y25 @Gaham (Thevitebsk)
+# Compass implementation by Gaham (Thevitebsk) Y25
 # A language based on Pascal
 class Compass:
  def phar(x:str):
