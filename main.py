@@ -7,11 +7,11 @@ class Compass:
   texts=[];funcs={}
   while len(x)>p:
    while len(x[p])>po:
-    if x[p][po:po+6]=="begin ":
+    if x[p].startswith("begin "):
      po+=6
      while x[p][po]!=":":texts.append(x[p][po]);po+=1
      x.insert(p+1,x[p][po+1::]);x[p]=x[p][6:po];funcs[x[p-1]]=x.pop(p+1)
     po+=1
    p+=1
-  print(x)
+  print(x,funcs)
 Compass.phar("""begin main:print("Hello, world!")""")
