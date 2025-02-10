@@ -15,6 +15,6 @@ class Compass:
      else:funcs[x[p-1]]=x.pop(p+1)
     po+=1
    p+=1
-   if"main"not in x:print(f"\"{oldx[0]}\"\nERROR:Function main requiers to be initated");exit()
+   if"main"not in x:print(f"\"{oldx[0]}\"\nERROR:Function main requiers to be initiated");exit()
   print(x,funcs)
 Compass.phar("""""")
