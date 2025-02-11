@@ -13,6 +13,7 @@ class Compass:
      x.insert(p+1,x[p][po+1::]);x[p]=x[p][6:po]
      if not x[p+1]:print(f"ERROR:Function {x[p]} has no body");exit()
      else:funcs[x[p-1]]=x.pop(p+1)
+    elif x[p][po]==";":break
     po+=1
    po=0
    p+=1
