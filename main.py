@@ -16,7 +16,7 @@ def Compass(x):
     po+=1
    po=0
    p+=1
-   if"main"not in x:print(f"\"{oldx[0]}\"\nERROR:Function main requiers to be initiated");exit()
+   if"main"not in funcs:print(f"\"{oldx[0]}\"\nERROR:Function main requiers to be initiated");exit()
    else:x.append(funcs["main"]);x.pop(x.index("main"));break
   return [x,funcs]
  def execu(x):
