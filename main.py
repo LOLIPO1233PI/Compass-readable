@@ -19,12 +19,11 @@ def Compass(x):
    po=0
    p+=1
    if"main"not in funcs:print(f"\"{oldx[0]}\"\nERROR:Function main requiers to be initiated");exit()
-   else:x.append(funcs["main"]);x.pop(x.index("main"));break
+   else:x.append(funcs["main"]);x.pop(x.index("main"))
   return [x,funcs]
  def execu(x):
   p=po=0
   c=x[0];funcs=x[1];
-  print(c,funcs)
   while len(c)>p:
    while len(c[p])>po:
     if c[p].startswith("text("):
