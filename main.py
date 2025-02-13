@@ -23,7 +23,7 @@ def Compass(x):
   return [x,funcs]
  def execu(x):
   p=po=0
-  c=x[0];funcs=x[1];
+  c=x[0];funcs=x[1]
   while len(c)>p:
    while len(c[p])>po:
     if c[p].startswith("text("):
