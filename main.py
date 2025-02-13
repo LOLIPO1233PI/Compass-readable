@@ -1,6 +1,8 @@
 # Compass implementation by Gaham (Thevitebsk) Y25
 # A language based on Pascal
+import time
 def Compass(x):
+ t=time.time()
  def phar(x):
   p=po=0
   x=x.strip().split("\n");oldx=x
@@ -31,5 +33,5 @@ def Compass(x):
     po+=1
    po=0
    p+=1
- execu(phar(x))
+ execu(phar(x));print(f"\ntook {time.time()-t:.4f} seconds")
 Compass("""""")
