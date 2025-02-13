@@ -16,11 +16,10 @@ def Compass(x):
      if not x[p+1]:print(f"ERROR:Function {x[p]} has no body");exit()
      else:funcs[x[p-1]]=x.pop(p+1)
     po+=1
-   if x[p]in funcs:x[p]=funcs[x[p]]
    po=0
    p+=1
-   if"main"not in funcs:print(f"\"{oldx[0]}\"\nERROR:Function main requiers to be initiated");exit()
-   else:x.append(funcs["main"]);x.pop(x.index("main"))
+  if"main"not in funcs:print(f"\"{oldx[0]}\"\nERROR:Function main requiers to be initiated");exit()
+  else:x.append(funcs["main"]);x.pop(x.index("main"))
   return [x,funcs]
  def execu(x):
   p=po=0
