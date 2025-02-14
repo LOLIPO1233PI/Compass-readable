@@ -1,9 +1,9 @@
 # Compass implementation by Gaham (Thevitebsk) Y25
 # A language based on Pascal
 import time
-def Compass(code):
+def Compass(code)->...:
  t=time.time()
- def phar(x):
+ def phar(x)->list:
   p=po=0
   x=x.strip().split("\n");oldx=x
   texts=[];funcs={}
@@ -19,16 +19,17 @@ def Compass(code):
    po=0
    p+=1
   if"main"not in funcs:print(f"\"{oldx[0]}\"\nERROR:Function main requiers to be initiated");exit()
-  else:x.append(funcs["main"]);x.pop(x.index("main"))
+  else:x.append(funcs["main"]);x.pop(x.index("main"));funcs.pop("main")
   return [x,funcs]
- def execu(x):
-  p=po=0 ; c=x[0];funcs=x[1]
+ def execu(x)->...:
+  p=po=0 ; c=x[0]#;funcs=x[1]
   while len(c)>p:
    while len(c[p])>po:
     if c[p].startswith("text("):
      po+=5
      while c[p][po]!=")":print(c[p][po],end="");po+=1
+    else:print(f"\"{c[p]}\"\nERROR:Unknown command");exit()
     po+=1
    po=0
    p+=1
- execu(phar(x));print(f"\ntook {time.time()-t:.4f} seconds")
+ execu(phar(code));print(f"\ntook {time.time()-t:.4f} seconds")
