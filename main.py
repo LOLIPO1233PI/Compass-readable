@@ -1,5 +1,5 @@
 # Compass implementation by Gaham (Thevitebsk) Y25
-# A language based on Pascal
+# A language based on Pascal the programing langauge
 from time import*;import sys,webbrowser
 def Compass(x:str):
  var={};t=time()
