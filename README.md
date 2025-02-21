@@ -6,5 +6,5 @@ not really an original name but who cares.
 - [X] Implement function definition
 - [ ] Implement errors (currently 2 implemented)
 - [X] Make an executor
-
+- [ ] Make an IDLE like console
 i will add more stuff later
