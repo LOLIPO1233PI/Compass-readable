@@ -44,7 +44,7 @@ def CPEC():
  code=[]
  while 1:
   code.append(input("»"))
-  if code[-1]=="help":code.pop();webbrowser.open("https://esolangs.org/wiki/Compass")
+  if code[-1]=="help":code.pop();print("Gaham will make a compass manual. For now you will be redirected to the esolangs page about Compass");sleep(3);webbrowser.open("https://esolangs.org/wiki/Compass")
   elif code[-1]=="clear":
    code.pop()
    if code:code=[]
