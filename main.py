@@ -35,7 +35,8 @@ def Compass(x:str):
     po+=1
    po=0
    p+=1
- execu(phar(x));print(f"\ntook {time()-t:.4f} seconds")
+ execu(phar(x))
+ print(f"\ntook {time()-t:.4f} seconds")
 def CPEC():
  """**C**ompass **P**harsing and **E**xcution **C**onsole
  
@@ -50,5 +51,5 @@ def CPEC():
    if code:code=[]
    else:print("There is no memory to clear")
   elif code[-1]=="exit":exit()
-try:Compass(open(sys.argv[1]).read())
-except IndexError:CPEC()
+if sys.argv[1:]:Compass(open(sys.argv[1]).read())
+else:CPEC()
