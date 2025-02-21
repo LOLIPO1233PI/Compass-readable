@@ -1,6 +1,6 @@
-Compass is a language based of [Pascal](https://en.wikipedia.org/wiki/Pascal_(programming_language)). Created by Thevitebsk (or gaham)
+Compass is a language based of [Pascal](https://en.wikipedia.org/wiki/Pascal_(programming_language)). Created by Gaham (A.K.A. Thevitebsk)
 
-not really an original name but who cares.
+Compass isn't really an original name for languge but who cares.
 
 # STATUS
 - [X] Implement function definition
