@@ -1,4 +1,4 @@
-Compass is a language based of Pascal. Created by Thevitebsk (or gaham)
+Compass is a language based of [Pascal](https://en.wikipedia.org/wiki/Pascal_(programming_language)). Created by Thevitebsk (or gaham)
 
 not really an original name but who cares.
 
