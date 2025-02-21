@@ -1,11 +1,11 @@
 # Compass implementation by Gaham (Thevitebsk) Y25
 # A language based on Pascal
-from time import*
+from time import*;import sys,webbrowser
 def Compass(x:str):
  var={};t=time()
  def phar(x):
   p=po=0
-  x=x.strip().split("\n");oldx=x
+  x=x.strip().split("\n")
   texts=[];funcs={}
   while len(x)>p:
    while len(x[p])>po:
@@ -36,3 +36,19 @@ def Compass(x:str):
    po=0
    p+=1
  execu(phar(x));print(f"\ntook {time()-t:.4f} seconds")
+def CPEC():
+ """**C**ompass **P**harsing and **E**xcution **C**onsole
+ 
+ An IDLE like console if no file for executing is added to the langauge's command arguments list"""
+ print("Compass v 1.1 by Gaham (Thevitebsk)\nType \"help\" for help, \"clear\" to reset memory\nAnd \"exit\" to end this sesion")
+ code=[]
+ while 1:
+  code.append(input("»"))
+  if code[-1]=="help":code.pop();webbrowser.open("https://esolangs.org/wiki/Compass")
+  elif code[-1]=="clear":
+   code.pop()
+   if code:code=[]
+   else:print("There is no memory to clear")
+  elif code[-1]=="exit":exit()
+try:Compass(open(sys.argv[1]).read())
+except IndexError:CPEC()
