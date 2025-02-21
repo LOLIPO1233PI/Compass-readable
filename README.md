@@ -7,5 +7,6 @@ not really an original name but who cares.
 - [ ] Implement errors (currently 2 implemented)
 - [X] Make an executor
 - [X] Make an IDLE like console
+- [ ] Make the Compass manual
 
 i will add more stuff later
