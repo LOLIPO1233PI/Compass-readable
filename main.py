@@ -1,7 +1,6 @@
 # Compass implementation by Gaham (Thevitebsk) Y25
 # A language based on Pascal
-from time import*;import sys,webbrowser
-VERSION=1.0;LUD="Febuary 21 2025"
+from time import*;import sys,webbrowser;VERSION=1.0;LUD="Febuary 21 2025"
 def Compass(x:str)->...:
  var={};t=time()
  def phar(x)->list:
@@ -21,8 +20,7 @@ def Compass(x:str)->...:
      while x[p][po]!=";":texts.append(x[p][po]);po+=1
      var["".join(texts[0:texts.index(":")])]="".join(texts[texts.index(":")+1::])
     po+=1
-   po=0
-   p+=1
+   po=0;p+=1
   if"main"in funcs:x.append(funcs["main"]);x.pop(x.index("main"))
   return [x,funcs,var]
  def execu(x)->...:
@@ -34,8 +32,7 @@ def Compass(x:str)->...:
      po+=5
      while c[p][po]!=")":print(c[p][po],end="");po+=1
     po+=1
-   po=0
-   p+=1
+   po=0;p+=1
  execu(phar(x))
  print(f"\ntook {time()-t:.4f} seconds")
 def CPEC():
