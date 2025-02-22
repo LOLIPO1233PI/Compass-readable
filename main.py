@@ -1,9 +1,10 @@
 # Compass implementation by Gaham (Thevitebsk) Y25
 # A language based on Pascal
 from time import*;import sys,webbrowser
-def Compass(x:str):
+VERSION=1.0;LUD="Febuary 21 2025"
+def Compass(x:str)->...:
  var={};t=time()
- def phar(x):
+ def phar(x)->list:
   p=po=0
   x=x.strip().split("\n")
   texts=[];funcs={}
@@ -24,7 +25,7 @@ def Compass(x:str):
    p+=1
   if"main"in funcs:x.append(funcs["main"]);x.pop(x.index("main"))
   return [x,funcs,var]
- def execu(x):
+ def execu(x)->...:
   p=po=0
   c=x[0];funcs=x[1];var=x[2]
   while len(c)>p:
@@ -38,10 +39,9 @@ def Compass(x:str):
  execu(phar(x))
  print(f"\ntook {time()-t:.4f} seconds")
 def CPEC():
- """**C**ompass **P**harsing and **E**xcution **C**onsole
- 
+ """**C**ompass **P**harsing and **E**xcution **C**onsole\n
  An IDLE like console if no file for executing is added to the langauge's command arguments list"""
- print("Compass v 1.1 by Gaham (Thevitebsk)\nType \"help\" for help, \"clear\" to reset memory\nAnd \"exit\" to end this sesion")
+ print(f"Compass v {VERSION} {LUD} by Gaham (Thevitebsk)\n"+"="*50+"\nType \"help\" for help on Compass, \"clear\" to reset code memory,\n\"exit\" to end this sesion and \"$exec\" to execute code memory")
  code=[]
  while 1:
   code.append(input("»"))
@@ -51,5 +51,5 @@ def CPEC():
    if code:code=[]
    else:print("There is no memory to clear")
   elif code[-1]=="exit":exit()
-if sys.argv[1:]:Compass(open(sys.argv[1]).read())
-else:CPEC()
+  elif code[-1]=="$exec":code.pop();Compass("\n".join(code))
+Compass(open(sys.argv[1]).read())if sys.argv[1:]else CPEC()
