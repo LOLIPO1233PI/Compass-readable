@@ -36,7 +36,8 @@ def Compass(x:str)->...:
  execu(phar(x))
  print(f"\ntook {time()-t:.4f} seconds")
 def CPEC():
- """**C**ompass **P**harsing and **E**xcution **C**onsole\n
+ """**C**ompass **P**harsing and **E**xcution **C**onsole
+ 
  An IDLE like console if no file for executing is added to the langauge's command arguments list"""
  print(f"Compass v {VER} {LUD} by Gaham (Thevitebsk)\n"+"="*51+"\nType \"help\" for help on Compass, \"clear\" to reset code memory,\n\"exit\" or \"end\" to end this sesion and \"$exec\" to execute code memory")
  code=[]
