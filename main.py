@@ -1,6 +1,6 @@
 # Compass implementation by Gaham (Thevitebsk) Y25
 # A language based on Pascal
-from time import*;import sys,webbrowser;VERSION=1.0;LUD="Febuary 21 2025"
+from time import*;import sys,webbrowser;VER=1.0;LUD="Febuary 21 2025"
 def Compass(x:str)->...:
  var={};t=time()
  def phar(x)->list:
@@ -25,7 +25,7 @@ def Compass(x:str)->...:
   return [x,funcs,var]
  def execu(x)->...:
   p=po=0
-  c=x[0];funcs=x[1];var=x[2]
+  c=x[0]#commenting this out since these aren't used YET;funcs=x[1];var=x[2]
   while len(c)>p:
    while len(c[p])>po:
     if c[p].startswith("text("):
@@ -38,15 +38,15 @@ def Compass(x:str)->...:
 def CPEC():
  """**C**ompass **P**harsing and **E**xcution **C**onsole\n
  An IDLE like console if no file for executing is added to the langauge's command arguments list"""
- print(f"Compass v {VERSION} {LUD} by Gaham (Thevitebsk)\n"+"="*50+"\nType \"help\" for help on Compass, \"clear\" to reset code memory,\n\"exit\" to end this sesion and \"$exec\" to execute code memory")
+ print(f"Compass v {VER} {LUD} by Gaham (Thevitebsk)\n"+"="*51+"\nType \"help\" for help on Compass, \"clear\" to reset code memory,\n\"exit\" or \"end\" to end this sesion and \"$exec\" to execute code memory")
  code=[]
  while 1:
   code.append(input("»"))
   if code[-1]=="help":code.pop();print("Gaham will make a compass manual. For now you will be redirected to the esolangs page about Compass");sleep(3);webbrowser.open("https://esolangs.org/wiki/Compass")
   elif code[-1]=="clear":
    code.pop()
-   if code:code=[]
+   if code:code.clear()
    else:print("There is no memory to clear")
-  elif code[-1]=="exit":exit()
+  elif code[-1]in["exit","end"]:exit()
   elif code[-1]=="$exec":code.pop();Compass("\n".join(code))
 Compass(open(sys.argv[1]).read())if sys.argv[1:]else CPEC()
