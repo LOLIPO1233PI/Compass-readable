@@ -46,8 +46,7 @@ def CPEC():
   if"$help"in code:code.pop();print("Gaham will make a compass manual. For now you will be redirected to the esolangs page about Compass");sleep(3);webbrowser.open("https://esolangs.org/wiki/Compass")
   elif"$clear"in code:
    code.pop()
-   if code:code.clear()
-   else:print("There is no memory to clear")
+   code.clear()if code else print("There is no memory to clear")
   elif["$exit","$end"]in code:exit()
   elif"$exec"in code:code.pop();Compass("\n".join(code))
 Compass(open(sys.argv[1]).read())if sys.argv[1:]else CPEC()
