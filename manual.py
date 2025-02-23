@@ -1,2 +1,2 @@
 print("in construction\n")
-print("COMPASS MANUAL")
+print("COMPASS FOR BIGINERS")
