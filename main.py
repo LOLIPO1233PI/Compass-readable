@@ -43,7 +43,7 @@ def CPEC():
  code=[]
  while 1:
   code.append(input("»"))
-  if"$help"in code:code.pop();print("Gaham will make a compass manual. For now you will be redirected to the esolangs page about Compass");sleep(3);webbrowser.open("https://esolangs.org/wiki/Compass")
+  if"$help"in code:code.pop();eval(open("manual.py").read())
   elif"$clear"in code:
    code.pop()
    code.clear()if code else print("There is no memory to clear")
