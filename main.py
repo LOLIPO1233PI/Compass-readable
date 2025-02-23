@@ -39,15 +39,15 @@ def CPEC():
  """**C**ompass **P**harsing and **E**xcution **C**onsole
  
  An IDLE like console if no file for executing is added to the langauge's command arguments list"""
- print(f"Compass v {VER} {LUD} by Gaham (Thevitebsk)","="*55,"Type \'help\' for help on Compass, \"clear\" to reset code memory,","\"exit\" or \"end\" to end this sesion and \"$exec\" to execute code memory",sep="\n")
+ print(f"Compass v {VER} {LUD} by Gaham (Thevitebsk)","="*55,"Type \'$help\' for help on Compass, \"$clear\" to reset code memory,","\"$exit\" or \"$end\" to end this sesion and \"$exec\" to execute code memory",sep="\n")
  code=[]
  while 1:
   code.append(input("»"))
-  if code[-1]=="$help":code.pop();print("Gaham will make a compass manual. For now you will be redirected to the esolangs page about Compass");sleep(3);webbrowser.open("https://esolangs.org/wiki/Compass")
-  elif code[-1]=="$clear":
+  if "$help"in code:code.pop();print("Gaham will make a compass manual. For now you will be redirected to the esolangs page about Compass");sleep(3);webbrowser.open("https://esolangs.org/wiki/Compass")
+  elif "$clear"in code:
    code.pop()
    if code:code.clear()
    else:print("There is no memory to clear")
-  elif code[-1]in["$exit","$end"]:exit()
-  elif code[-1]=="$exec":code.pop();Compass("\n".join(code))
+  elif ["$exit","$end"]in code:exit()
+  elif "$exec"in code:code.pop();Compass("\n".join(code))
 Compass(open(sys.argv[1]).read())if sys.argv[1:]else CPEC()
