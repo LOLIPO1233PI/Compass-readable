@@ -43,7 +43,7 @@ def CPEC():
  code=[]
  while 1:
   code.append(input("»"))
-  if"$help"in code:code.pop();eval(open("manual.py").read())
+  if"$help"in code:code.pop();exec(open("manual.py").read())
   elif"$clear"in code:
    code.pop()
    code.clear()if code else print("There is no memory to clear")
