@@ -2,7 +2,7 @@
 # A language based on Pascal
 from time import*;import sys
 from manual import*
-VER=1.0;LUD="Febuary 23 2025"
+VER=1.0;LUD="Febuary 24 2025"
 def Compass(x:str)->None:
  var={};t=time()
  def phar(x)->list:
@@ -14,16 +14,22 @@ def Compass(x:str)->None:
     if x[p].startswith("begin "):
      po+=6
      while x[p][po]!=":":texts.append(x[p][po]);po+=1
-     x.insert(p+1,x[p][po+1::]);x[p]=x[p][6:po]
-     if not x[p+1]:print(f"ERROR:Function {x[p]} has no body");exit()
-     else:funcs[x[p-1]]=x.pop(p+1)
+     x.insert(p+1,x[p][po+1::])
+     x[p]=x[p][6:po]
+     if not x[p+1]:
+      print(f"ERROR:Function {x[p]} has no body at line {p+1}");exit()
+     else:
+      funcs[x[p-1]]=x.pop(p+1)
     elif x[p][po]==":":
      while 0<po:po-=1
-     while x[p][po]!=";":texts.append(x[p][po]);po+=1
+     while x[p][po]!=";":
+      texts.append(x[p][po]);po+=1
      var["".join(texts[0:texts.index(":")])]="".join(texts[texts.index(":")+1::])
     po+=1
    po=0;p+=1
-  if"main"in funcs:x.append(funcs["main"]);x.pop(x.index("main"))
+  if"main"in funcs:
+    x.append(funcs["main"])
+    x.pop(x.index("main"))
   return [x,funcs,var]
  def execu(x)->None:
   p=po=0
@@ -32,7 +38,8 @@ def Compass(x:str)->None:
    while len(c[p])>po:
     if c[p].startswith("text("):
      po+=5
-     while c[p][po]!=")":print(c[p][po],end="");po+=1
+     while c[p][po]!=")":
+      print(c[p][po],end="");po+=1
     po+=1
    po=0;p+=1
  execu(phar(x))
@@ -41,7 +48,7 @@ def CPEC():
  """**C**ompass **P**harsing and **E**xcution **C**onsole
  
  An IDLE like console if no file for executing is added to the langauge's command arguments list"""
- print(f"Compass v {VER} {LUD} by Gaham (Thevitebsk)","="*55,"Type \"$clear\" to reset code memory, \"$exec\" to execute code memory","And \"$exit\" or \"$end\" to end this sesion",sep="\n")
+ print(f"Compass v {VER} {LUD} by Gaham (Thevitebsk)","="*55,"Type \"$clear\" to reset code memory, \"$exec\" to execute code memory","And \"$exit\" to end this sesion",sep="\n")
  code=[]
  while 1:
   code.append(input("»"))
@@ -49,6 +56,6 @@ def CPEC():
   elif"$clear"in code:
    code.pop()
    code.clear()if code else print("There is no memory to clear")
-  elif["$exit","$end"]in code:exit()
-  elif"$exec"in code:code.pop();Compass("\n".join(code))
-Compass(open(sys.argv[1]).read())if sys.argv[1:]else CPEC()
+  elif"$exit"in code:exit()
+  elif"$exec"in code:code.pop() ; Compass("\n".join(code))
+Compass(open(sys.argv[1]).read()) if sys.argv[1:] else CPEC()
