@@ -6,31 +6,33 @@ VER=1.0;LUD="Febuary 24 2025"
 def Compass(x:str)->None:
  var={};t=time()
  def phar(x)->list:
-  p=po=int(0)
   x=x.strip().split("\n")
+  p=po=int(0);oldx=x
   texts=[];funcs={}
   while len(x)>p:
    while len(x[p])>po:
-    if x[p].startswith("begin "):
+    if x[p].startswith("func "):
      po+=6
      while x[p][po]!=":":texts.append(x[p][po]);po+=1
      x.insert(p+1,x[p][po+1::])
      x[p]=x[p][6:po]
      if not x[p+1]:
-      print(f"ERROR:Function {x[p]} has no body at line {p+1}");exit()
+      print(f"ERROR:Function {x[p]} has no body at line {p+1}");break
      else:
       funcs[x[p-1]]=x.pop(p+1)
+     x.pop(p)
     elif x[p][po]==":":
      while 0<po:po-=1
      while x[p][po]!=";":
       texts.append(x[p][po]);po+=1
      var["".join(texts[0:texts.index(":")])]="".join(texts[texts.index(":")+1::])
+    elif x[p+1]in funcs:x[p+1]=funcs[x[p+1]]
     po+=1
    po=0;p+=1
   if"main"in funcs:
     x.append(funcs["main"])
     x.pop(x.index("main"))
-  return [x,funcs,var]
+  return[x,funcs,var,oldx]
  def execu(x)->None:
   p=po=0
   c=x[0]#commenting this out since these aren't used YET;funcs=x[1];var=x[2]
@@ -42,6 +44,7 @@ def Compass(x:str)->None:
       while c[p][po]!=")":
        print(c[p][po],end="");po+=1
      except IndexError:print(f"ERROR: IndexError occured at line {p+1},\nperhaps you forgot to add a closing parenthesis?")
+    else:print(f"\"{x[3][p]}\"\nERROR: Unknown command found in line {p+1}");break
     po+=1
    po=0;p+=1
  execu(phar(x))
@@ -60,4 +63,4 @@ def CPEC():
    code.clear()if code else print("There is no memory to clear")
   elif"$exit"in code:exit()
   elif"$exec"in code:code.pop();Compass("\n".join(code))
-Compass(open(sys.argv[1]).read())if sys.argv[1:]else CPEC()
+Compass(open(sys.argv[1]).read()) if sys.argv[1:] else CPEC()
