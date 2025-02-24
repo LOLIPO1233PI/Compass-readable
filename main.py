@@ -57,7 +57,7 @@ def CPEC():
  """**C**ompass **P**harsing and **E**xcution **C**onsole
  
  An IDLE like console if no file for executing is added to the langauge's command arguments list"""
- print(f"Compass v {VER} {LUD} by Gaham (Thevitebsk)","="*55,"Type \"$clear\" to reset code memory, \"$exec\" to execute code memory","And \"$exit\" to end this sesion",sep="\n")
+ print(f"Compass v {VER} {LUD} by Gaham (Thevitebsk)","="*55,"Type \"$clear\" to reset code memory, \"$exec\" to execute code memory\nAnd \"$exit\" to end this sesion",sep="\n")
  code=[]
  while 1:
   code.append(input("»"))
