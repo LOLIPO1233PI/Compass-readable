@@ -1,2 +1,3 @@
-print("in construction\n")
-print("COMPASS FOR BIGINERS")
+def manual():
+  print("in construction\n")
+  print("COMPASS FOR BIGINERS")
