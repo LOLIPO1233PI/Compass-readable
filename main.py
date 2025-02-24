@@ -38,8 +38,10 @@ def Compass(x:str)->None:
    while len(c[p])>po:
     if c[p].startswith("text("):
      po+=5
-     while c[p][po]!=")":
-      print(c[p][po],end="");po+=1
+     try:
+      while c[p][po]!=")":
+       print(c[p][po],end="");po+=1
+     except IndexError:print(f"ERROR: IndexError occured at line {p+1},\nperhaps you forgot to add a closing parenthesis?")
     po+=1
    po=0;p+=1
  execu(phar(x))
@@ -57,5 +59,5 @@ def CPEC():
    code.pop()
    code.clear()if code else print("There is no memory to clear")
   elif"$exit"in code:exit()
-  elif"$exec"in code:code.pop() ; Compass("\n".join(code))
-Compass(open(sys.argv[1]).read()) if sys.argv[1:] else CPEC()
+  elif"$exec"in code:code.pop();Compass("\n".join(code))
+Compass(open(sys.argv[1]).read())if sys.argv[1:]else CPEC()
