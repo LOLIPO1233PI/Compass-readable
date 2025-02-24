@@ -20,7 +20,7 @@ def Compass(x:str)->None:
       print(f"ERROR:Function {x[p]} has no body at line {p+1}");break
      else:
       funcs[x[p-1]]=x.pop(p+1)
-     x.pop(p)
+     x.pop(p+1)
     elif x[p][po]==":":
      while 0<po:po-=1
      while x[p][po]!=";":
