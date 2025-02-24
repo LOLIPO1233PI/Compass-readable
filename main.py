@@ -63,4 +63,5 @@ def CPEC():
    code.clear()if code else print("There is no memory to clear")
   elif"$exit"in code:exit()
   elif"$exec"in code:code.pop();Compass("\n".join(code))
-Compass(open(sys.argv[1]).read()) if sys.argv[1:] else CPEC()
+try:Compass(open(sys.argv[1]).read()) if sys.argv[1:] else CPEC()
+except Exception as e:print(f"NOTICE:\"{e}\" got emitted. Notify the creator in discord (belarusianflag) or make a issue detailing the problem")
