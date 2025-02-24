@@ -1,7 +1,6 @@
 # Compass implementation by Gaham (Thevitebsk) Y25
 # A language based on Pascal
-from time import*
-import sys,webbrowser
+from time import*;import sys
 from manual import*
 VER=1.0;LUD="Febuary 23 2025"
 def Compass(x:str)->None:
