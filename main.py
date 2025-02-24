@@ -11,22 +11,24 @@ def Compass(x:str)->None:
   texts=[];funcs={}
   while len(x)>p:
    while len(x[p])>po:
-    if x[p].startswith("func "):
-     po+=6
-     while x[p][po]!=":":texts.append(x[p][po]);po+=1
-     x.insert(p+1,x[p][po+1::])
-     x[p]=x[p][6:po]
-     if not x[p+1]:
-      print(f"ERROR:Function {x[p]} has no body at line {p+1}");break
-     else:
-      funcs[x[p-1]]=x.pop(p+1)
-     x.pop(p+1)
-    elif x[p][po]==":":
-     while 0<po:po-=1
-     while x[p][po]!=";":
-      texts.append(x[p][po]);po+=1
-     var["".join(texts[0:texts.index(":")])]="".join(texts[texts.index(":")+1::])
-    elif x[p+1]in funcs:x[p+1]=funcs[x[p+1]]
+    try:
+     if x[p].startswith("func "):
+      po+=6
+      while x[p][po]!=":":texts.append(x[p][po]);po+=1
+      x.insert(p+1,x[p][po+1::])
+      x[p]=x[p][6:po]
+      if not x[p+1]:
+       print(f"ERROR:Function {x[p]} has no body at line {p+1}");break
+      else:
+       funcs[x[p-1]]=x.pop(p+1)
+      x.pop(p+1)
+     elif x[p][po]==":":
+      while 0<po:po-=1
+      while x[p][po]!=";":
+       texts.append(x[p][po]);po+=1
+      var["".join(texts[0:texts.index(":")])]="".join(texts[texts.index(":")+1::])
+     elif x[p+1]in funcs:x[p+1]=funcs[x[p+1]]
+    except:...
     po+=1
    po=0;p+=1
   if"main"in funcs:
@@ -63,5 +65,4 @@ def CPEC():
    code.clear()if code else print("There is no memory to clear")
   elif"$exit"in code:exit()
   elif"$exec"in code:code.pop();Compass("\n".join(code))
-try:Compass(open(sys.argv[1]).read()) if sys.argv[1:] else CPEC()
-except Exception as e:print(f"NOTICE:\"{e}\" got emitted. Notify the creator in discord (belarusianflag) or make a issue detailing the problem")
+Compass(open(sys.argv[1]).read()) if sys.argv[1:] else CPEC()
