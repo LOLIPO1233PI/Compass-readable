@@ -1,10 +1,11 @@
 # Compass implementation by Gaham (Thevitebsk) Y25
 # A language based on Pascal
-from time import*;import sys,webbrowser;VER=1.0;LUD="Febuary 23 2025"
+from time import*;import sys,webbrowser
+VER=1.0;LUD="Febuary 23 2025"
 def Compass(x:str)->...:
  var={};t=time()
  def phar(x)->list:
-  p=po=0
+  p=po=int(0)
   x=x.strip().split("\n")
   texts=[];funcs={}
   while len(x)>p:
