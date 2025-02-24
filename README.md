@@ -4,7 +4,7 @@ Compass isn't really an original name for languge but who cares.
 
 # STATUS
 - [X] Implement function definition
-- [ ] Implement errors (currently 2 implemented)
+- [X] Implement errors
 - [X] Make an executor
 - [X] Make an IDLE like console
 - [ ] Make the Compass manual
