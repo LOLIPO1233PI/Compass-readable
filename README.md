@@ -7,6 +7,7 @@ Compass isn't really an original name for languge but who cares.
 - [X] Implement errors
 - [X] Make an executor
 - [X] Make an IDLE like console
+- [ ] Fix bugs
 - [ ] Make the Compass manual
 
 i will add more stuff later
