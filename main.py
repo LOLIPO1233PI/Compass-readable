@@ -1,6 +1,6 @@
 # Compass implementation by Gaham (Thevitebsk) Y25
 # A language based on Pascal
-from time import*;import sys,webbrowser
+from time import*;import sys,webbrowser,manual
 VER=1.0;LUD="Febuary 23 2025"
 def Compass(x:str)->...:
  var={};t=time()
@@ -44,7 +44,7 @@ def CPEC():
  code=[]
  while 1:
   code.append(input("»"))
-  if"$help"in code:code.pop();exec(open("manual.py").read())
+  if"$help"in code:code.pop();manual()
   elif"$clear"in code:
    code.pop()
    code.clear()if code else print("There is no memory to clear")
