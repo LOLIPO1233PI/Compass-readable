@@ -28,7 +28,7 @@ def Compass(x:str)->None:
        while x[p][po]!=";":
         texts.append(x[p][po]);po+=1
        var["".join(texts[0:texts.index(":")])]="".join(texts[texts.index(":")+1::])
-      except IndexError:print(f"ERROR: IndexError occured at line {p+1}\nPerhaps you forgot to add a semicolon?")
+      except IndexError:print(f"ERROR: IndexError occured at line {p+1}\nPerhaps you forgot to add a semicolon?");break
      elif x[p+1]in funcs:x[p+1]=funcs[x[p+1]]
     except:...
     po+=1
@@ -47,7 +47,7 @@ def Compass(x:str)->None:
      try:
       while c[p][po]!=")":
        print(c[p][po],end="");po+=1
-     except IndexError:print(f"ERROR: IndexError occured at line {p+1},\nPerhaps you forgot to add a closing parenthesis?")
+     except IndexError:print(f"ERROR: IndexError occured at line {p+1},\nPerhaps you forgot to add a closing parenthesis?");break
     else:print(f"\"{x[3][p]}\"\nERROR: Unknown command found in line {p+1}");break
     po+=1
    po=0;p+=1
