@@ -45,7 +45,7 @@ def Compass(x:str)->None:
      try:
       while c[p][po]!=")":
        print(c[p][po],end="");po+=1
-     except IndexError:print(f"ERROR: IndexError occured at line {p+1},\nperhaps you forgot to add a closing parenthesis?")
+     except IndexError:print(f"\nERROR: IndexError occured at line {p+1},\nperhaps you forgot to add a closing parenthesis?")
     else:print(f"\"{x[3][p]}\"\nERROR: Unknown command found in line {p+1}");break
     po+=1
    po=0;p+=1
