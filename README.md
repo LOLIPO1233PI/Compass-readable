@@ -15,5 +15,5 @@ i will add more stuff later
 
 * Download Github desktop
 * Clone the repo using Github desktop
-* Open the folder using any IDE (like [Visual Studio Code](https://code.visualstudio.com/))
+* Open the folder with the implementation using any IDE (like [Visual Studio Code](https://code.visualstudio.com/))
 * Run the main.py python file
