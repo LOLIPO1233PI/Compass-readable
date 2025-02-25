@@ -11,7 +11,7 @@ Compass isn't really an original name for languge but who cares.
 
 i will add more stuff later
 
-# Installation process
+# INSTALLATION
 
 * Download Github desktop
 * Clone the repo using Github desktop
