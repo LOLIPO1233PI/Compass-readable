@@ -2,7 +2,7 @@
 # A language based on Pascal
 from time import*;import sys
 from manual import*
-VER=1.0;LUD="Febuary 24 2025"
+VER=1.0;LUD="Febuary 25 2025"
 def Compass(x:str)->None:
  var={};t=time()
  
@@ -30,31 +30,31 @@ def Compass(x:str)->None:
        while x[p][po]!=";":
         texts.append(x[p][po]);po+=1
        var["".join(texts[0:texts.index(":")])]="".join(texts[texts.index(":")+1::])
-      except IndexError:print(f"ERROR: IndexError occured at line {p+1}\nPerhaps you forgot to add a semicolon?")
+       x.pop(p)
+      except IndexError:print(f"ERROR: IndexError occured at line {p+1}\nPerhaps you forgot to add a semicolon?");break
 
      elif x[p+1]in funcs:x[p+1]=funcs[x[p+1]]
     except:...
     po+=1
    po=0;p+=1
 
-  if"main"in funcs:
-    x.append(funcs["main"])
-    x.pop(x.index("main"))
+  if"main"in funcs: x.append(funcs["main"]) ; x.pop(x.index("main"))
   return[x,funcs,var,oldx]
  
  def execu(x)->None:
-  p=po=0
-  c=x[0];var=x[2]
+  p=po=0;c=x[0];var=x[2]
   while len(c)>p:
    while len(c[p])>po:
     
-    if c[p].startswith("text("):
-     po+=5
-     try:
-      while c[p][po]!=")":
-       print(c[p][po],end="");po+=1
-     except IndexError:print(f"ERROR: IndexError occured at line {p+1},\nPerhaps you forgot to add a closing parenthesis?")
-    
+    if c[p].startswith("print("):
+        po+=6
+        try:
+         cont=str()
+         while c[p][po]!=")": cont+=c[p][po];po+=1
+         if cont in var: print(var[cont])
+         else: print(cont)
+        except IndexError:print(f"ERROR: IndexError occured at line {p+1},\nPerhaps you forgot to add a closing parenthesis?");break
+     
     else:print(f"\"{x[3][p]}\"\nERROR: Unknown command found in line {p+1}");break
     po+=1
    po=0;p+=1
