@@ -1,3 +1,3 @@
 def manual():
-  print("in construction\n")
-  print("COMPASS FOR BIGINERS")
+  print("func\nbody: func name:body\n\nused for defining functions (if you couldn't understand already somehow)\n"+"="*25)
+  print("print\nbody: print(content)\n\nused for printing content that can be either a variable or a string")
