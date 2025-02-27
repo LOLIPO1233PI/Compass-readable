@@ -49,10 +49,12 @@ def Compass(x:str)->None:
     if c[p].startswith("print("):
         po+=6
         try:
-         cont=str()
+         cont="";contp=0
          while c[p][po]!=")": cont+=c[p][po];po+=1
-         if cont in var: print(var[cont])
-         else: print(cont)
+         cont=cont.split(",")
+         while len(cont)>contp:
+          if cont[contp]in var: print(var[cont[contp]]);contp+=1
+          else: print(cont[contp]);contp+=1
         except IndexError:print(f"ERROR: IndexError occured at line {p+1},\nPerhaps you forgot to add a closing parenthesis?");break
      
     else:print(f"\"{x[3][p]}\"\nERROR: Unknown command found in line {p+1}");break
