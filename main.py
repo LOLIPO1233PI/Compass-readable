@@ -80,5 +80,5 @@ def CPEC():
     a=int(code[-1].split()[1]) ; code.pop()
     code[a]=input(f"old code:{code[a]}\nnew code:")
    except IndexError:print("CPECEXEPTION: Unexpected IndexError,\nPerhaps you typed the wrong line number?")
-  elif"$list"in code:code.pop();print("\n".join(code))if code else print("CPECEXEPTION: The memory is empty")
+  elif"$list"in code:code.pop();print("\n".join(code))if code else...
 Compass(open(sys.argv[1]).read()) if sys.argv[1:] else CPEC()
