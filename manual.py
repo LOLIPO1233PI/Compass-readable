@@ -4,10 +4,10 @@ def manual():
        "print:","syntax structure: \"print(content1,...,contentN)","prints content of a variable or a string",sep="\n")
 def cpecm():
   print(f"Compass Pharsing and Execution Console Manual","="*55,
-                                      "\"$help\" Print's the manual for Compass",
-                                      "\"$clear\" Clears the memory (if any)",
-                                      "\"$exec\" Executes the memory as code",
-                                      "\"$exit\" End's the CPEC session",
-                                      "\"$modify\" Modifies a line in the memory (if any)",
-                                      "\"$list\" Prints the memory",
-                                      "\"$cpec\" Prints the manual for CPEC",sep="\n")
+        "\"$help\" Print's the manual for Compass",
+        "\"$clear\" Clears the memory (if any)",
+        "\"$exec\" Executes the memory as code",
+        "\"$exit\" End's the CPEC session",
+        "\"$modify\" Modifies a line in the memory (if any)",
+        "\"$list\" Prints the memory",
+        "\"$cpec\" Prints the manual for CPEC",sep="\n")
