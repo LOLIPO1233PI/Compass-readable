@@ -2,7 +2,7 @@
 # A language based on Pascal
 from time import*;import sys
 from manual import*
-VER=1.0;LUD="Febuary 25 2025"
+VER=1.0;LUD="Febuary 28 2025"
 def Compass(x:str)->None:
  var={};t=time()
  
