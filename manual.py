@@ -1,8 +1,8 @@
 def manual():
   print("Compass Manual","="*55,
-       "Compass is a programming language that is designed to be based on Pascal.",
-       "The language is not finished. yet!",
-       "Commands:",sep="\n")
+       "Compass is a programming language that is designed to be based on Pascal.","The language is not finished. yet!","="*55,
+       "func:","sytax structure: \"func name:body\"","function definition command\n",
+       "print:","syntax structure: \"print(content1,...,contentN)","prints content of a variable or a string",sep="\n")
 def cpecm():
   print(f"Compass Pharsing and Execution Console Manual","="*55,
                                       "\"$help\" Print's the manual for Compass",
