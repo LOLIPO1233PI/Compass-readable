@@ -70,11 +70,9 @@ def CPEC():
  print(f"Compass v {VER} {LUD} by Gaham (Thevitebsk)","="*55,"Type \"$clear\" to reset code memory, \"$exec\" to execute code memory","\"$exit\" to end this sesion and \"$help\" for help on the language",sep="\n")
  code=[]
  while 1:
-  code.append(input("»"))
+  code.append(input(">>"))
   if"$help"in code:code.pop();manual()
-  elif"$clear"in code:
-   code.pop()
-   code.clear()if code else print("There is no memory to clear")
+  elif"$clear"in code:code.pop();code.clear()if code else print("There is no memory to clear")
   elif"$exit"in code:exit()
   elif"$exec"in code:code.pop();Compass("\n".join(code))
 Compass(open(sys.argv[1]).read()) if sys.argv[1:] else CPEC()
