@@ -36,7 +36,7 @@ def Compass(x:str)->None:
      elif x[p+1]in funcs:x[p+1]=funcs[x[p+1]]
     except:...
     po+=1
-   po=0;p+=1
+   po=0 ; p+=1
 
   if"main"in funcs: x.append(funcs["main"]) ; x.pop(x.index("main"))
   return[x,funcs,var,oldx]
@@ -59,7 +59,7 @@ def Compass(x:str)->None:
      
     else:print(f"\"{x[3][p]}\"\nERROR: Unknown command found in line {p+1}");break
     po+=1
-   po=0;p+=1
+   po=0 ; p+=1
  execu(phar(x))
  print(f"\ntook {time()-t:.4f} seconds")
 
