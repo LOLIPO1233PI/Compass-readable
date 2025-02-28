@@ -31,7 +31,7 @@ def Compass(x:str)->None:
         texts.append(x[p][po]);po+=1
        var["".join(texts[0:texts.index(":")])]="".join(texts[texts.index(":")+1::])
        x.pop(p)
-      except IndexError:print(f"ERROR: IndexError occured at line {p+1}\nPerhaps you forgot to add a semicolon?");break
+      except IndexError:print(f"ERROR: Unexpected IndexError at line {p+1},\nPerhaps you forgot to add a semicolon?");break
 
      elif x[p+1]in funcs:x[p+1]=funcs[x[p+1]]
     except:...
@@ -53,9 +53,9 @@ def Compass(x:str)->None:
          while c[p][po]!=")": cont+=c[p][po];po+=1
          cont=cont.split(",")
          while len(cont)>contp:
-          if cont[contp]in var: print(var[cont[contp]]);contp+=1
-          else: print(cont[contp]);contp+=1
-        except IndexError:print(f"ERROR: IndexError occured at line {p+1},\nPerhaps you forgot to add a closing parenthesis?");break
+          if cont[contp].strip()in var: print(var[cont[contp].strip()]);contp+=1
+          else: print(cont[contp].strip());contp+=1
+        except IndexError:print(f"ERROR: Unexpected IndexError at line {p+1},\nPerhaps you forgot to add a closing parenthesis?");break
      
     else:print(f"\"{x[3][p]}\"\nERROR: Unknown command found in line {p+1}");break
     po+=1
@@ -67,7 +67,7 @@ def CPEC():
  """**C**ompass **P**harsing and **E**xcution **C**onsole
  
  An IDLE like console if no file for executing is added to the langauge's command arguments list"""
- print(f"Compass v {VER} {LUD} by Gaham (Thevitebsk)","="*55,"Type \"$clear\" to reset code memory, \"$exec\" to execute code memory","\"$exit\" to end this sesion and \"$help\" for help on the language",sep="\n")
+ print(f"Compass v {VER} {LUD} by Gaham (Thevitebsk)","="*55,"Type \"$cpec\" for the list of commands in this console",sep="\n")
  code=[]
  while 1:
   code.append(input(">> "))
@@ -76,9 +76,12 @@ def CPEC():
   elif"$exit"in code:exit()
   elif"$exec"in code:code.pop();Compass("\n".join(code))
   elif"$modify"in code[-1]:
-   try:
-    a=int(code[-1].split()[1]) ; code.pop()
-    code[a]=input(f"old code:{code[a]}\nnew code:")
-   except IndexError:print("CPECEXEPTION: Unexpected IndexError,\nPerhaps you typed the wrong line number?")
+   if code:
+    try:
+     a=int(code[-1].split()[1]) ; code.pop()
+     code[a]=input(f"old code:{code[a]}\nnew code:")
+    except IndexError:print("CPECEXEPTION: Unexpected IndexError,\nPerhaps you typed the wrong line number?")
+   else:print("CPECEXEPTION: $modify cannot be used on empty memory")
   elif"$list"in code:code.pop();print("\n".join(code))if code else...
+  elif"$cpec"in code:code.pop();cpecm()
 Compass(open(sys.argv[1]).read()) if sys.argv[1:] else CPEC()
