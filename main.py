@@ -49,7 +49,7 @@ def Compass(x:str)->None:
     if c[p].startswith("print("):
         po+=6
         try:
-         cont="";contp=0
+         cont="" ; contp=0
          while c[p][po]!=")": cont+=c[p][po];po+=1
          cont=cont.split(",")
          while len(cont)>contp:
