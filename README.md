@@ -1,3 +1,5 @@
+TW:Worst code readability
+
 Compass is a language based of [Pascal](https://en.wikipedia.org/wiki/Pascal_(programming_language)). Created by Gaham (A.K.A. Thevitebsk) in Python 3.13.
 
 Compass isn't really an original name for languge but who cares.
