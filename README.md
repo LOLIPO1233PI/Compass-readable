@@ -1,4 +1,4 @@
-TW:Worst code readability
+TW:Worst code readability in the language files!
 
 Compass is a language based of [Pascal](https://en.wikipedia.org/wiki/Pascal_(programming_language)). Created by Gaham (A.K.A. Thevitebsk) in Python 3.13.
 
