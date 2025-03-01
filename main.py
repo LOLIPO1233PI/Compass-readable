@@ -8,7 +8,7 @@ def Compass(x:str)->None:
  
  def phar(x)->list:
   x=x.strip().split("\n")
-  p=po=int(0);oldx=x
+  p=po=0;oldx=x
   texts=[];funcs={}
 
   while len(x)>p:
